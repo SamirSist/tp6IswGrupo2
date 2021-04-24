@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css\bootstrap\bootstrap.min.css" rel="stylesheet">
+    <link href="css\style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <title>DeliveryEat - Registrar Pedido</title>
 </head>
@@ -33,9 +34,9 @@
                 <div class="col-md-4 col-sm-12 order-md-2 order-sm-1 mb-4 pl-4">
                     <div class="container">
                         <div class="row">
-                            <button id="detalleBtn" class ="btn btn-primary btn-block">Carrito por $300</button>
+                            <button class ="btn btn-primary btn-block" onclick="mostrarDetalle()">Carrito por $300</button>
                         </div>
-                        <div class="detallePedido d-none  d-md-inline">
+                        <div class="detallePedido d-none  d-md-inline mt-3">
                             <div class="row mb-1">
                                 <h6>Detalle Pedido:</h6>
                             </div>
@@ -133,7 +134,7 @@
                             <div class="row">
                                 <div class="col-6 col-sm-5 col-lg-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="tiempoEntrega" id="loAntesPosible" value="option1" checked>
+                                        <input onclick="ocultarReloj()" class="form-check-input" type="radio" name="tiempoEntrega" id="loAntesPosible" value="option1" checked>
                                         <label class="form-check-label" for="loAntesPosible">
                                         Lo antes posible
                                         </label>
@@ -141,15 +142,15 @@
                                 </div>
                                 <div class="col-6 col-sm-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="tiempoEntrega" id="programarOpt" value="option2">
+                                        <input onclick="mostrarReloj()" class="form-check-input" type="radio" name="tiempoEntrega" id="programarOpt" value="option2">
                                         <label class="form-check-label" for="programarOpt">
                                         Programar
                                         </label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-6">
+                            <div class="row mt-4">
+                                <div class="col-12 col-sm-8">
                                     <div class="timePicker d-none">
                                         <div class="form-group">
                                             <label for="appt">Seleccione Hora:</label>
@@ -168,7 +169,7 @@
                             <div class="row">
                                 <div class="col-6 col-sm-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="metodoPago" id="efectivo" value="option1" checked>
+                                        <input onclick="mostrarEfectivo()" class="form-check-input" type="radio" name="metodoPago" id="efectivo" value="option1" checked>
                                         <label class="form-check-label" for="efectivo">
                                         Efectivo
                                         </label>
@@ -176,57 +177,67 @@
                                 </div>
                                 <div class="col-6 col-sm-5">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="metodoPago" id="tarjetaCredito" value="option2">
+                                        <input onclick="mostrarTarjeta()" class="form-check-input" type="radio" name="metodoPago" id="tarjetaCredito" value="option2">
                                         <label class="form-check-label" for="tarjetaCredito">
                                         Tarjeta de Crédito
                                         </label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="efectivoForm d-none">
-                                    <div class="form-group">
-                                        <label for="montoEfectivo">Con cuanto va a pagar</label>
-                                        <input type="text" class="form-control" id="montoEfectivo" placeholder="">
-                                    </div>
+                            <div class="row mt-4">
+                                <div class="efectivoForm">
+                                    
+                                        <div class="form-group">
+                                            <div class="row pl-3 justify-content-sm-start">
+                                                <div class="col-6 col-sm-6 mt-1 pr-0 ">
+                                                    <label for="montoEfectivo">Con cuanto va a pagar:</label>
+                                                </div>
+                                                <div class="col-3 col-sm-3 pl-0">
+                                                    <input type="text" class="form-control" id="montoEfectivo" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
                                 </div>
                             </div>
                         </div>
-                        <div class="container-fluid mt-3 d-none">
-                            <h6>Datos tarjeta:</h6>
-                            <div class="row">
+                        <div id="overlay" class="datosTarjeta container-fluid mt-3 d-none">
+                            <div id="overContent">
+                                <h6>Datos tarjeta:</h6>
+                                <div class="row">
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <label for="nroTarjeta">Número de Tarjeta</label>
+                                                <input type="text" class="form-control" id="nroTarjeta" placeholder="">
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
-                                            <label for="nroTarjeta">Número de Tarjeta</label>
-                                            <input type="text" class="form-control" id="nroTarjeta" placeholder="">
+                                            <label for="nombreTitular">Nombre y Apellido titular</label>
+                                            <input type="text" class="form-control" id="nombreTitular" placeholder="Juan Perez">
                                         </div>
                                     </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label for="nombreTitular">Nombre y Apellido titular</label>
-                                        <input type="text" class="form-control" id="nombreTitular" placeholder="Juan Perez">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 col-sm-4 col-md-3">
+                                        <div class="form-group">
+                                            <label for="vencimientoTarj">Vencimiento</label>
+                                            <input type="text" class="form-control" id="vencimientoTarj" placeholder="MM/AAAA">
+                                        </div>
+                                    </div>
+                                    <div class="col-5 col-sm-4 col-md-3">
+                                        <div class="form-group">
+                                            <label for="cvc">CVC</label>
+                                            <input type="text" class="form-control" id="cvc" placeholder="">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6 col-sm-4 col-md-3">
-                                    <div class="form-group">
-                                        <label for="vencimientoTarj">Vencimiento</label>
-                                        <input type="text" class="form-control" id="vencimientoTarj" placeholder="MM/AAAA">
+                                <div class="row justify-content-center">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-primary">Agregar Tarjeta</button>
                                     </div>
-                                </div>
-                                <div class="col-5 col-sm-4 col-md-3">
-                                    <div class="form-group">
-                                        <label for="cvc">CVC</label>
-                                        <input type="text" class="form-control" id="cvc" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="col">
-                                    <button type="submit" class="btn btn-primary">Agregar Tarjeta</button>
                                 </div>
                             </div>
                         </div>
@@ -246,6 +257,6 @@
     <script src="js\bootstrap\jquery-3.5.1.slim.min.js"></script>
     <script src="js\bootstrap\popper.min.js"></script>
     <script src="js\bootstrap\bootstrap.min.js"></script>
-    
+    <script src="js\controlVentanas.js"></script>
 </body>
 </html>
