@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="D:\Documentos\Uni\ISW\TP 6\Repo\css\bootstrap\bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <title>DeliveryEat - Registrar Pedido</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="text-muted">DeliveryEat!</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>Registrar Pedido a Comercio</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <button class ="btn btn-primary">Carrito por $300</button>
+        </div>
+        <div class="detallePedido d-none">
+            <div class="row">
+                <h6>Detalle Pedido:</h6>
+            </div>
+
+            <div class="row">
+                <div class="col-4 sm">
+                    <p>Porción tarta de verdura x1</p>
+                </div>
+                <div class="col-4 sm">
+                    <p>$100</p>
+                </div>
+                <div class="col-4 sm">
+                    <i class="bi bi-trash-fill"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 sm">
+                    <p>Coca-Cola 150ml x1</p>
+                </div>
+                <div class="col-4 sm">
+                    <p>$100</p>
+                </div>
+                <div class="col-4 sm">
+                    <i class="bi bi-trash-fill"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 sm">
+                    <p>Costo envío</p>
+                </div>
+                <div class="col-4 sm">
+                    <p>$100</p>
+                </div>
+                <div class="col-4 sm">
+                    <i class="bi bi-trash-fill"></i>
+                </div>
+            </div>
+
+            <hr/>
+            <div class="row">
+                <div class="col-4 sm">
+                    <p>Total</p>
+                </div>
+                <div class="col-4 sm">
+                    <p>$300</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <form>
+                <div class="form-group">
+                    <h6>Datos para entrega:</h6>
+                    <label for="selectCiudad">Ciudad</label> <br>
+                    <select class="custom-select" id="selectCiudad" required>
+                    <option value="">Seleccione Ciudad</option>
+                    <option value="1">Córdoba</option>
+                    <option value="2">Rio Cuarto</option>
+                    <option value="3">Villa María</option>
+                    </select>
+                    <div class="invalid-feedback">No seleccionó ciudad</div>
+                </div>
+                <div class="form-group">
+                    <label for="nombreCalle">Nombre y Número de Calle</label>
+                    <input type="text" class="form-control" id="nombreCalle" placeholder="Entre Ríos 500">
+                </div>
+                <div class="form-group">
+                    <label for="deptoNum">Depto</label>
+                    <input type="text" class="form-control" id="deptoNum" placeholder="5A torre 2">
+                </div>
+                <div class="form-group">
+                    <label for="referenciaDir">Referencia</label>
+                    <input type="text" class="form-control" id="referenciaDir" placeholder="Entre calles Belgrano y Chacabuco">
+                </div>
+                <h6>Tiempo de entrega:</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tiempoEntrega" id="loAntesPosible" value="option1" checked>
+                    <label class="form-check-label" for="loAntesPosible">
+                    Lo antes posible
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tiempoEntrega" id="programarOpt" value="option2">
+                    <label class="form-check-label" for="programarOpt">
+                    Programar
+                    </label>
+                </div>
+                <div class="timePicker d-none">
+                    <div class="form-group">
+                        <label for="appt">Seleccione Hora:</label>
+
+                        <input type="time" id="appt" name="appt"
+                            min="09:00" max="18:00" required>
+                    </div>
+                </div>
+                <h6>Método de pago:</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metodoPago" id="efectivo" value="option1" checked>
+                    <label class="form-check-label" for="efectivo">
+                    Efectivo
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metodoPago" id="tarjetaCredito" value="option2">
+                    <label class="form-check-label" for="tarjetaCredito">
+                    Tarjeta de Crédito
+                    </label>
+                </div>
+
+                <div class="tarjetaForm d-none">
+                    <h6>Datos tarjeta:</h6>
+                    <div class="form-group">
+                        <label for="nroTarjeta">Número de Tarjeta</label>
+                        <input type="text" class="form-control" id="nroTarjeta" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreTitular">Nombre y Apellido titular</label>
+                        <input type="text" class="form-control" id="nombreTitular" placeholder="Juan Perez">
+                    </div>
+                    <div class="form-group">
+                        <label for="vencimientoTarj">Vencimiento</label>
+                        <input type="text" class="form-control" id="vencimientoTarj" placeholder="MM/AAAA">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvc">CVC</label>
+                        <input type="text" class="form-control" id="cvc" placeholder="">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar Tarjeta</button>
+                </div>
+
+                <div class="efectivoForm d-none">
+                    <div class="form-group">
+                        <label for="montoEfectivo">Con cuanto va a pagar</label>
+                        <input type="text" class="form-control" id="montoEfectivo" placeholder="">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Registrar Pedido</button>
+            </form>
+        </div>
+    </div>  
+    <script src="D:\Documentos\Uni\ISW\TP 6\Repo\js\bootstrap\jquery-3.5.1.slim.min.js"></script>
+    <script src="D:\Documentos\Uni\ISW\TP 6\Repo\js\bootstrap\popper.min.js"></script>
+    <script src="D:\Documentos\Uni\ISW\TP 6\Repo\js\bootstrap\bootstrap.min.js"></script>
+</body>
+</html>
