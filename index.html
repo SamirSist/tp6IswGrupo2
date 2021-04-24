@@ -33,9 +33,9 @@
                 <div class="col-md-4 col-sm-12 order-md-2 order-sm-1 mb-4 pl-4">
                     <div class="container">
                         <div class="row">
-                            <button class ="btn btn-primary">Carrito por $300</button>
+                            <button class ="btn btn-primary btn-block">Carrito por $300</button>
                         </div>
-                        <div class="detallePedido">
+                        <div class="detallePedido d-none  d-md-inline">
                             <div class="row mb-1">
                                 <h6>Detalle Pedido:</h6>
                             </div>
@@ -131,7 +131,7 @@
                         <div class="container-fluid mt-4">
                             <h6>Tiempo de entrega:</h6>
                             <div class="row">
-                                <div class="col-6 col-sm-4">
+                                <div class="col-6 col-sm-5 col-lg-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="tiempoEntrega" id="loAntesPosible" value="option1" checked>
                                         <label class="form-check-label" for="loAntesPosible">
@@ -139,7 +139,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-6 col-sm-4">
+                                <div class="col-6 col-sm-3">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="tiempoEntrega" id="programarOpt" value="option2">
                                         <label class="form-check-label" for="programarOpt">
@@ -166,7 +166,7 @@
                         <div class="container-fluid mt-4">
                             <h6>Método de pago:</h6>
                             <div class="row">
-                                <div class="col-6 col-sm-4">
+                                <div class="col-6 col-sm-3">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="metodoPago" id="efectivo" value="option1" checked>
                                         <label class="form-check-label" for="efectivo">
@@ -174,7 +174,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-6 col-sm-4">
+                                <div class="col-6 col-sm-5">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="metodoPago" id="tarjetaCredito" value="option2">
                                         <label class="form-check-label" for="tarjetaCredito">
@@ -192,28 +192,44 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="tarjetaForm d-none mt-4">
+                        <div class="container-fluid mt-3 d-none">
                             <h6>Datos tarjeta:</h6>
-                            <div class="form-group">
-                                <label for="nroTarjeta">Número de Tarjeta</label>
-                                <input type="text" class="form-control" id="nroTarjeta" placeholder="">
+                            <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="nroTarjeta">Número de Tarjeta</label>
+                                            <input type="text" class="form-control" id="nroTarjeta" placeholder="">
+                                        </div>
+                                    </div>
                             </div>
-                            <div class="form-group">
-                                <label for="nombreTitular">Nombre y Apellido titular</label>
-                                <input type="text" class="form-control" id="nombreTitular" placeholder="Juan Perez">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label for="nombreTitular">Nombre y Apellido titular</label>
+                                        <input type="text" class="form-control" id="nombreTitular" placeholder="Juan Perez">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="vencimientoTarj">Vencimiento</label>
-                                <input type="text" class="form-control" id="vencimientoTarj" placeholder="MM/AAAA">
+                            <div class="row">
+                                <div class="col-6 col-sm-4 col-md-3">
+                                    <div class="form-group">
+                                        <label for="vencimientoTarj">Vencimiento</label>
+                                        <input type="text" class="form-control" id="vencimientoTarj" placeholder="MM/AAAA">
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-md-3">
+                                    <div class="form-group">
+                                        <label for="cvc">CVC</label>
+                                        <input type="text" class="form-control" id="cvc" placeholder="">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="cvc">CVC</label>
-                                <input type="text" class="form-control" id="cvc" placeholder="">
+                            <div class="row justify-content-center">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Agregar Tarjeta</button>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Agregar Tarjeta</button>
                         </div>
-
                         <!--Botón Registrar-->
                         <div class="container-fluid mt-3">
                             <div class="row justify-content-sm-end justify-content-center">
