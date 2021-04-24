@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css\bootstrap\bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link href="css/bootstrap/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <title>DeliveryEat - Registrar Pedido</title>
 </head>
 <body>
@@ -141,25 +142,26 @@
                                 </div>
                                 <div class="col-6 col-sm-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="tiempoEntrega" id="programarOpt" value="option2">
+                                        <input class="form-check-input" type="radio" name="tiempoEntrega" id="programarOpt" value="option2" onclick="habilitarProgramacion()">
                                         <label class="form-check-label" for="programarOpt">
                                         Programar
                                         </label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="timePicker d-none">
-                                        <div class="form-group">
-                                            <label for="appt">Seleccione Hora:</label>
-
-                                            <input type="time" id="appt" name="appt"
-                                                min="09:00" max="18:00" required>
-                                        </div>
-                                    </div>
+                                <div id="programacion" style="display: none;">
+                                    Prueba habilitación
                                 </div>
                             </div>
+                            <div class='col-sm-6'>
+                                <div class="form-group">
+                                   <div class='input-group date' id='datetime'>
+                                      <input type='text' class="form-control" />
+                                      <span class="input-group-addon">
+                                      <span class="glyphicon glyphicon-calendar"></span>
+                                      </span>
+                                   </div>
+                                </div>
+                             </div>
                         </div>
 
                         <!--Método de Pago-->
@@ -246,6 +248,10 @@
     <script src="js\bootstrap\jquery-3.5.1.slim.min.js"></script>
     <script src="js\bootstrap\popper.min.js"></script>
     <script src="js\bootstrap\bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/locales/bootstrap-datetimepicker.es.js"></script>
     
 </body>
 </html>
