@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function mostrarDetalle(){
     $(".detallePedido").toggleClass("d-none");
 };
@@ -28,3 +29,9 @@ function ocultarTarjeta() {
     $(".efectivoForm").removeClass("d-none");
     $('#efectivo').prop('checked', true);
 }
+=======
+$("#detalleBtn").click(function(){
+    $(".detallePedido").show();
+  });
+
+>>>>>>> origin/pato
