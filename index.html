@@ -154,27 +154,18 @@
                                 </div>
                             </div>
                             <div class="row mt-4">
-                                <div class="col-12 col-sm-8">
-                                    <div class="timePicker d-none">
-                                        <div class="form-group">
-                                            <label for="appt">Seleccione Hora:</label>
-
-                                            <input type="time" id="appt" name="appt"
-                                                min="09:00" max="22:00">
-                                        </div>
+                                <div class='col-sm-6'>
+                                    <div class="timePicker form-group d-none">
+                                       <div class='input-group date' id='datetime'>
+                                          <input type='text' class="form-control" />
+                                          <span class="input-group-addon">
+                                          <span class="glyphicon glyphicon-calendar"></span>
+                                          </span>
+                                       </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class='col-sm-6'>
-                                <div class="form-group">
-                                   <div class='input-group date' id='datetime'>
-                                      <input type='text' class="form-control" />
-                                      <span class="input-group-addon">
-                                      <span class="glyphicon glyphicon-calendar"></span>
-                                      </span>
-                                   </div>
-                                </div>
-                             </div>
+                            
                         </div>
 
                         <!--Método de Pago-->
@@ -254,14 +245,10 @@
                                         <div class="col-4 col-sm-4 col-md-4 p-0">
                                             <button type="submit" class="btn btn-primary" onclick="ocultarTarjeta()">Cancelar</button>
                                         </div>
-                                        <div class="col-6 col-sm-4 col-md-4 p-0">
-                                            <button type="submit" class="btn btn-primary" ng-click ="agregarTarj()">Agregar Tarjeta</button>
+                                        <div class="col-4 col-sm-4 col-md-4 p-0">
+                                                <button id="boton-agregar" ng-click ="agregarTarj()" class="btn btn-primary">Agregar Tarjeta</button>
                                         </div>
-                                        <div class="row justify-content-center">
-                                          <div class="col">
-                                            <button id="boton-agregar" class="btn btn-primary">Agregar Tarjeta</button>
-                                          </div>
-                                        </div>
+                                    </div>
                                 <h5 id="cartel"></h5>
                                     </div>
                                 </div>
