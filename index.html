@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es">
+
+<html lang="es" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,8 @@
     <link href="css\bootstrap\bootstrap.min.css" rel="stylesheet">
     <link href="css\style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="js/datosControl.js"></script>
     <title>DeliveryEat - Registrar Pedido</title>
 </head>
 <body>
@@ -31,29 +34,29 @@
         <!---Carrito y datos-->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col-sm-12 order-md-2 order-sm-1 mb-4 pl-4">
-                    <div class="container">
+                <div class="col-md-4 col-sm-12 order-md-2 order-sm-1 mb-4 pl-4" >
+                    <div class="container" ng-controller="myCtrl">
                         <div class="row">
-                            <button class ="btn btn-primary btn-block" onclick="mostrarDetalle()">Carrito por $300</button>
+                            <button class ="btn btn-primary btn-block" onclick="mostrarDetalle()">Carrito por ${{total}}</button>
                         </div>
                         <div class="detallePedido d-none  d-md-inline mt-3">
                             <div class="row mb-1">
                                 <h6>Detalle Pedido:</h6>
                             </div>
 
-                            <div class="row mb-0 pl-1">
+                            <div class="row mb-0 pl-1" ng-repeat="item in articulos">
                                 <div class="col-7 p-0">
-                                    <p>Porción tarta de verdura x1</p>
+                                    <p>{{item[1]}} x{{item[2]}}</p>
                                 </div>
                                 <div class="col-3 p-0">
-                                    <p>$100</p>
+                                    <p>${{item[3]}}</p>
                                 </div>
-                                <div class="col-2 p-0">
+                                <div class="col-2 p-0" ng-click="eliminarItem(item)" >
                                     <i class="bi bi-trash-fill"></i>
                                 </div>
                             </div>
 
-                            <div class="row mb-0 pl-1">
+                            <!--<div class="row mb-0 pl-1">
                                 <div class="col-7 p-0">
                                     <p>Coca-Cola 150ml x1</p>
                                 </div>
@@ -64,7 +67,7 @@
                                     <i class="bi bi-trash-fill"></i>
                                 </div>
                             </div>
-
+                        -->
                             <div class="row mb-0 pl-1">
                                 <div class="col-7 p-0">
                                     <p>Costo envío</p>
@@ -80,13 +83,13 @@
                                     <p>Total</p>
                                 </div>
                                 <div class="col-3 p-0">
-                                    <p>$300</p>
+                                    <p>${{total}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8 col-sm-12 order-md-1 order-sm-2">
+                <div class="col-md-8 col-sm-12 order-md-1 order-sm-2" ng-controller ="tarjetaControl">
                     <form>
                         <!--Datos para Entrega-->
                         <div class="container-fluid">
@@ -156,7 +159,7 @@
                                             <label for="appt">Seleccione Hora:</label>
 
                                             <input type="time" id="appt" name="appt"
-                                                min="09:00" max="18:00" required>
+                                                min="09:00" max="22:00">
                                         </div>
                                     </div>
                                 </div>
@@ -201,45 +204,70 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="overlay" class="datosTarjeta container-fluid mt-3 d-none">
-                            <div id="overContent">
-                                <h6>Datos tarjeta:</h6>
-                                <div class="row">
-                                        <div class="col-12 col-md-6">
+                        <div id="overlay" class="datosTarjeta container-fluid d-none">
+                            <div class="row">
+                                <div id="overContent" class="p-5 col-12 col-sm-8 col-md-6 col-lg-5 rounded">
+                                    <h6>Datos tarjeta:</h6>
+                                    <div class="row">
+                                            <div class="col-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label for="nroTarjeta" >Número de Tarjeta</label>
+                                                    <input type="text" class="form-control" id="nroTarjeta" ng-model="nroTarj">
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-12">
                                             <div class="form-group">
-                                                <label for="nroTarjeta">Número de Tarjeta</label>
-                                                <input type="text" class="form-control" id="nroTarjeta" placeholder="">
+                                                <label for="nombreTitular">Nombre y Apellido titular</label>
+                                                <input type="text" class="form-control" id="nombreTitular" placeholder="Juan Perez">
                                             </div>
                                         </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group">
-                                            <label for="nombreTitular">Nombre y Apellido titular</label>
-                                            <input type="text" class="form-control" id="nombreTitular" placeholder="Juan Perez">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 col-sm-4 col-md-4">
+                                            <div class="form-group">
+                                                <label for="vencimientoTarj">Vencimiento</label>
+                                                <input type="text" class="form-control" id="vencimientoTarj" placeholder="MM/AAAA">
+                                            </div>
+                                        </div>
+                                        <div class="col-5 col-sm-4 col-md-4">
+                                            <div class="form-group">
+                                                <label for="cvc">CVC</label>
+                                                <input type="text" class="form-control" id="cvc" placeholder="">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 col-sm-4 col-md-3">
-                                        <div class="form-group">
-                                            <label for="vencimientoTarj">Vencimiento</label>
-                                            <input type="text" class="form-control" id="vencimientoTarj" placeholder="MM/AAAA">
+
+                                    <div class="row justify-content-around">
+                                        <div class="col-4 col-sm-4 col-md-4 p-0">
+                                            <button type="submit" class="btn btn-primary" onclick="ocultarTarjeta()">Cancelar</button>
                                         </div>
-                                    </div>
-                                    <div class="col-5 col-sm-4 col-md-3">
-                                        <div class="form-group">
-                                            <label for="cvc">CVC</label>
-                                            <input type="text" class="form-control" id="cvc" placeholder="" required>
+                                        <div class="col-6 col-sm-4 col-md-4 p-0">
+                                            <button type="submit" class="btn btn-primary" ng-click ="agregarTarj()">Agregar Tarjeta</button>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col">
-                                        <button id="boton-agregar" class="btn btn-primary">Agregar Tarjeta</button>
-                                    </div>
-                                </div>
+                                        <div class="row justify-content-center">
+                                          <div class="col">
+                                            <button id="boton-agregar" class="btn btn-primary">Agregar Tarjeta</button>
+                                          </div>
+                                        </div>
                                 <h5 id="cartel"></h5>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>  
+                        <div class="listadoTarjetas container-fluid mt-1 d-none">
+                            <div class="row">
+                                
+                                <div class="col-12">
+                                    <div class="border col-12 col-sm-8">
+                                    <p>Tarjeta Visa terminada en {{nroTarjeta}}</p>
+                                    </div>
+                                </div>
+                                
+
+
                             </div>
                         </div>
                         <!--Botón Registrar-->
@@ -254,9 +282,9 @@
                 </div>
             </div>  
         </div>
-    </div>  
+    </div>
+    
     <script src="js\bootstrap\jquery-3.5.1.slim.min.js"></script>
-    <script src="js\bootstrap\popper.min.js"></script>
     <script src="js\bootstrap\bootstrap.min.js"></script>
     <script src="js\controlVentanas.js"></script>
     <script src="js/payform.js"></script>
