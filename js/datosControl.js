@@ -1,3 +1,4 @@
+nroTarjeta = 0
 angular.module('myApp', []).controller("myCtrl", 
     function ($scope) {
         $scope.articulos = [[0,"Porción tarta de verdura", 1, 100],
@@ -12,3 +13,13 @@ angular.module('myApp', []).controller("myCtrl",
         };
     }
 );
+
+angular.module('myApp').controller("tarjetaControl",
+        function($scope){
+            $scope.nroTarjeta = 0
+            $scope.agregarTarj = function(){
+                $scope.nroTarjeta = $scope.nroTarj.substring(12, 16);
+            };
+        }
+);
+
