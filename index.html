@@ -82,7 +82,7 @@
                                     <p>Total</p>
                                 </div>
                                 <div class="col-3 p-0">
-                                    <p>${{total}}</p>
+                                    <p>$<i id="total">{{total}}</i></p>
                                 </div>
                             </div>
                         </div>
@@ -97,11 +97,11 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="selectCiudad">Ciudad</label> <br>
-                                        <select class="custom-select" id="selectCiudad" required>
+                                        <select class="custom-select entrega" id="ciudad" required>
                                         <option value="">Seleccione Ciudad</option>
-                                        <option value="1">Córdoba</option>
-                                        <option value="2">Rio Cuarto</option>
-                                        <option value="3">Villa María</option>
+                                        <option value="Cordoba">Córdoba</option>
+                                        <option value="Rio Cuarto">Rio Cuarto</option>
+                                        <option value="Villa Maria">Villa María</option>
                                         </select>
                                         <div class="invalid-feedback">No seleccionó ciudad</div>
                                     </div>
@@ -109,7 +109,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="nombreCalle">Calle y Número</label>
-                                        <input type="text" class="form-control" id="nombreCalle" placeholder="Entre Ríos 500">
+                                        <input type="text" class="form-control entrega" id="direccion" placeholder="Entre Ríos 500">
                                     </div>
                                 </div>
                             </div>
@@ -117,13 +117,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="deptoNum">Depto</label>
-                                        <input type="text" class="form-control" id="deptoNum" placeholder="5A torre 2">
+                                        <input type="text" class="form-control entrega" id="depto" placeholder="5A torre 2">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="referenciaDir">Referencia</label>
-                                        <input type="text" class="form-control" id="referenciaDir" placeholder="Entre calles Belgrano y Chacabuco">
+                                        <input type="text" class="form-control entrega" id="referencia" placeholder="Entre calles Belgrano y Chacabuco">
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@
                                                     <label for="montoEfectivo">Con cuanto va a pagar:</label>
                                                 </div>
                                                 <div class="col-3 col-sm-3 pl-0">
-                                                    <input type="text" class="form-control" id="montoEfectivo" placeholder="">
+                                                    <input onblur="validarEfectivo()" type="text" class="form-control entrega" id="montoEfectivo" placeholder="">
                                                 </div>
                                             </div>
                                         </div>
@@ -247,7 +247,7 @@
                         <div class="container-fluid mt-3">
                             <div class="row justify-content-sm-end justify-content-center">
                                 <div class="col-sm-auto col-auto"> 
-                                    <button type="submit" class="btn btn-primary">Registrar Pedido</button>
+                                    <button id="pedido" class="btn btn-primary">Registrar Pedido</button>
                                 </div>  
                             </div>
                         </div>
@@ -260,5 +260,7 @@
     <script src="js\bootstrap\popper.min.js"></script>
     <script src="js\bootstrap\bootstrap.min.js"></script>
     <script src="js\controlVentanas.js"></script>
+    <script src="js/controlEfectivo.js"></script>
+    <script src="js/gestorPedido.js"></script>
 </body>
 </html>
