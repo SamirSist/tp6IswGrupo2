@@ -14,12 +14,5 @@ angular.module('myApp', []).controller("myCtrl",
     }
 );
 
-angular.module('myApp').controller("tarjetaControl",
-        function($scope){
-            $scope.nroTarjeta = 0
-            $scope.agregarTarj = function(){
-                $scope.nroTarjeta = $scope.nroTarj.substring(12, 16);
-            };
-        }
-);
+
 

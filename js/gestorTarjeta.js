@@ -51,5 +51,15 @@ function limpiarAviso() {
 }
 
 function aceptar(){
+    agregarTarjeta();
     aviso.innerHTML="Su tarjeta fue agregada con exito";
 }
+
+angular.module('myApp').controller("tarjetaControl",
+        function($scope){
+            $scope.nroTarjeta = 0
+            $scope.agregarTarj = function(){
+                $scope.nroTarjeta = $scope.nroTarj.substring(12, 16);
+            };
+        }
+);

@@ -29,6 +29,12 @@ function ocultarTarjeta() {
     $(".efectivoForm").removeClass("d-none");
     $('#efectivo').prop('checked', true);
 }
+
+function agregarTarjeta(){
+    $(".datosTarjeta").addClass("d-none");
+    $(".datosTarjeta").removeClass("d-block");
+}
+
 $("#detalleBtn").click(function(){
     $(".detallePedido").show();
   });
