@@ -13,19 +13,24 @@
     <script src="js/datosControl.js"></script>
     <script src="js/gestorEfectivo.js"></script>
     <title>DeliveryEat - Registrar Pedido</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;0,800;1,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="fondo">
         <!---Logo-->
-        <div class="container mb-3">
+        <div class="container mb-3" id="fondo1">
             <div class="row">
                 <div class="col">
-                    <h3 class="text-muted">DeliveryEat!</h3>
+                    <h3 class="text">DeliveryEat!</h3>
                 </div>
             </div>
         </div>
         <!---Título-->
-        <div class="container mb-5">
+        <div class="container mb-5" id="fondo2">
             <div class="row">
                 <div class="col">
                     <h3>Registrar Pedido a Comercio</h3>
@@ -94,7 +99,7 @@
                 <div class="col-md-8 col-sm-12 order-md-1 order-sm-2" ng-controller ="tarjetaControl">
                     <form>
                         <!--Datos para Entrega-->
-                        <div class="container-fluid">
+                        <div class="container-fluid" id="borde">
                             <h6>Datos para entrega:</h6>
                             <div class="row">
                                 <div class="col-md-6">
@@ -119,7 +124,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="deptoNum">Depto</label>
+                                        <label for="deptoNum" ">Depto</label>
                                         <input type="text" class="form-control" id="deptoNum" placeholder="5A torre 2">
                                     </div>
                                 </div>
@@ -134,13 +139,13 @@
                         
 
                         <!--Tiempo de entrega>-->
-                        <div class="container-fluid mt-4">
+                        <div class="container-fluid mt-4" id="borde">
                             <h6>Tiempo de entrega:</h6>
                             <div class="row">
                                 <div class="col-6 col-sm-5 col-lg-4">
                                     <div class="form-check">
                                         <input onclick="ocultarReloj()" class="form-check-input" type="radio" name="tiempoEntrega" id="loAntesPosible" value="option1" checked>
-                                        <label class="form-check-label" for="loAntesPosible">
+                                        <label class="form-check-label" for="loAntesPosible" >
                                         Lo antes posible
                                         </label>
                                     </div>
@@ -171,7 +176,7 @@
                         </div>
 
                         <!--Método de Pago-->
-                        <div class="container-fluid mt-4">
+                        <div class="container-fluid mt-4" id="borde">
                             <h6>Método de pago:</h6>
                             <div class="row">
                                 <div class="col-6 col-sm-3">
@@ -211,7 +216,7 @@
                         <div id="overlay" class="datosTarjeta container-fluid d-none">
                             <div class="row">
                                 <div id="overContent" class="p-5 col-12 col-sm-8 col-md-6 col-lg-5 rounded">
-                                    <h6>Datos tarjeta:</h6>
+                                    <h6>Datos Tarjeta:</h6>
                                     <div class="row">
                                             <div class="col-12 col-md-12">
                                                 <div class="form-group">
@@ -273,7 +278,7 @@
                         <div class="container-fluid mt-3">
                             <div class="row justify-content-sm-end justify-content-center">
                                 <div class="col-sm-auto col-auto"> 
-                                    <button type="submit" class="btn btn-primary">Registrar Pedido</button>
+                                    <button type="submit" class="btn btn-primary" id="colorBoton">Registrar Pedido</button>
                                 </div>  
                             </div>
                         </div>
