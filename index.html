@@ -11,7 +11,6 @@
     <link href="css/bootstrap/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="js/datosControl.js"></script>
-    <script src="js/gestorEfectivo.js"></script>
     <title>DeliveryEat - Registrar Pedido</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,26 +19,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <div class="container" id="fondo">
+    <div class="container-fluid p-0" id="fondo">
         <!---Logo-->
-        <div class="container mb-3" id="fondo1">
+        <div class="container-fluid m-0" id="fondo1">
             <div class="row">
-                <div class="col">
+                <div class="col-12">
                     <h3 class="text">DeliveryEat!</h3>
                 </div>
             </div>
         </div>
         <!---Título-->
-        <div class="container mb-5" id="fondo2">
+        <div class="container-fluid mb-3 ml-0 mr-0" id="fondo2">
             <div class="row">
-                <div class="col">
+                <div class="col-12">
                     <h3>Registrar Pedido a Comercio</h3>
                 </div>
             </div>
         </div>
 
         <!---Carrito y datos-->
-        <div class="container-fluid">
+        <div class="container-fluid pl-5 pr-5 pt-0">
             <div class="row">
                 <div class="col-md-4 col-sm-12 order-md-2 order-sm-1 mb-4 pl-4" >
                     <div class="container" ng-controller="myCtrl">
@@ -295,5 +294,6 @@
     <script src="js\controlVentanas.js"></script>
     <script src="js/payform.js"></script>
     <script src="js/gestorTarjeta.js"></script>
+    <script src="js/gestorEfectivo.js"></script>
 </body>
 </html>

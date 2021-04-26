@@ -47,14 +47,16 @@
 #fondo1 {
   background-color: #E76F51;
   text-align: center;
+  width: 100%;
 }
 
 #fondo2 {
   background-color: #F4A261;
-  text-align: center
+  text-align: center;
+  width: 100%;
 }
 
-#fondo {
+body {
   background-color: #E9C46A;
 }
 
