@@ -43,3 +43,56 @@
     margin: 10px;
   }
 }
+
+#fondo1 {
+  background-color: #E76F51;
+  text-align: center;
+}
+
+#fondo2 {
+  background-color: #F4A261;
+  text-align: center
+}
+
+#fondo {
+  background-color: #E9C46A;
+}
+
+.btn {
+  background-color: #2A9D8F;
+  color: black;
+  font-family: 'Open Sans', sans-serif, black;
+  border: white;
+}
+
+h3 {
+  font-family: 'Open Sans', sans-serif, black;
+  font-size: larger;
+}
+
+h6 {
+  font-family: 'Open Sans', sans-serif, black;
+}
+
+label {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+}
+
+#borde {
+  border: 2px solid black;
+}
+
+#overContent {
+  background-color: #E9C46A;
+  border: 2px solid black;
+
+  
+}
