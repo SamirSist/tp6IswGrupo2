@@ -104,7 +104,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="selectCiudad">Ciudad</label> <br>
-                                        <select class="custom-select" id="selectCiudad">
+                                        <select class="custom-select campo" id="selectCiudad">
                                         <option value="">Seleccione Ciudad</option>
                                         <option value="1">Córdoba</option>
                                         <option value="2">Rio Cuarto</option>
@@ -116,21 +116,21 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="nombreCalle">Calle y Número</label>
-                                        <input type="text" class="form-control" id="nombreCalle" placeholder="Entre Ríos 500">
+                                        <input type="text" class="form-control campo" id="nombreCalle" placeholder="Entre Ríos 500">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="deptoNum" ">Depto</label>
-                                        <input type="text" class="form-control" id="deptoNum" placeholder="5A torre 2">
+                                        <label for="deptoNum">Depto</label>
+                                        <input type="text" class="form-control campo" id="deptoNum" placeholder="5A torre 2">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="referenciaDir">Referencia</label>
-                                        <input type="text" class="form-control" id="referenciaDir" placeholder="Entre calles Belgrano y Chacabuco">
+                                        <input type="text" class="form-control campo" id="referenciaDir" placeholder="Entre calles Belgrano y Chacabuco">
                                     </div>
                                 </div>
                             </div>
@@ -204,11 +204,11 @@
                                                     <label for="montoEfectivo">Con cuanto va a pagar:</label>
                                                 </div>
                                                 <div class="col-3 col-sm-3 pl-0">
-                                                    <input onblur="validarEfectivo()" type="text" class="form-control entrega" id="montoEfectivo" placeholder="">
+                                                    <input onblur="validarEfectivo()" type="text" class="form-control campo" id="montoEfectivo" placeholder="">
                                                 </div>
                                             </div>
                                         </div>
-                                    
+                                        <h5 id="titulo-vuelto"></h5>
                                 </div>
                             </div>
                         </div>
@@ -277,7 +277,7 @@
                         <div class="container-fluid mt-3">
                             <div class="row justify-content-sm-end justify-content-center">
                                 <div class="col-sm-auto col-auto"> 
-                                    <button type="submit" class="btn btn-primary" id="colorBoton">Registrar Pedido</button>
+                                    <button class="btn btn-primary" id="colorBoton">Registrar Pedido</button>
                                 </div>  
                             </div>
                         </div>
@@ -295,5 +295,6 @@
     <script src="js/payform.js"></script>
     <script src="js/gestorTarjeta.js"></script>
     <script src="js/gestorEfectivo.js"></script>
+    <script src="js/gestorPedido.js"></script>
 </body>
 </html>

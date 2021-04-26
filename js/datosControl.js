@@ -10,6 +10,11 @@ angular.module('myApp', []).controller("myCtrl",
             $scope.elementoEliminado = $scope.articulos.splice(pos, 1);
             $scope.total = 100 //Por el envío
             $scope.articulos.forEach(articulo => $scope.total += articulo[3])
+            //se reseta para que el usario vuelva a poner el efectivo
+            let pagoEfectivo = document.getElementById("montoEfectivo").value="";
+
+            //se resetea el titulo de vuelto
+            vuelto.innerHTML = "";
         };
     }
 );
