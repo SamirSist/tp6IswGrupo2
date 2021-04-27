@@ -26,7 +26,6 @@ btnPedido.addEventListener("click", (e)=>{
     
     for (let i = 0; i < datosEntrega.length; i++) {
         let dato = datosEntrega[i];
-        
         //preguntamos si hay algo en el campo
         if(!hayAlgo(dato.value)) {
             //si no hay algo  ,prguntamos si esta marcado el efectio ya que debe analizarlo en caso de estarlo
@@ -38,13 +37,49 @@ btnPedido.addEventListener("click", (e)=>{
             return;
         }
         
+        
     }
 
     /**
      * si esta todo ok debemos enviar un mensaje al usuario con su detalle y costo de pedido
      */
-    mostrarPedido()
+     mostrarResumen()
+     var textoDetalle = ""
+     let ciudad = document.getElementById("selectCiudad").value;
+     let nombreCalle = document.getElementById("nombreCalle").value;
+     let deptoNum = document.getElementById("deptoNum").value;
+     let loAntesPosible = document.getElementById("loAntesPosible");
+     let programarOpt = document.getElementById("programarOpt");
+     let datetime = document.getElementById("fechaHoraPicker").value;
+     let efectivo = document.getElementById("efectivo");
+     let tarjetaCredito = document.getElementById("tarjetaCredito");
+     let montoEfectivo= document.getElementById("montoEfectivo").value;
+     let detallePedido = document.getElementById("detalleResPedido");
+     textoDetalle += "Dirección: "
+     textoDetalle += ciudad;
+     textoDetalle += ' -' + nombreCalle;
+     textoDetalle += ' -' + deptoNum;
+     if(loAntesPosible.checked) {
+        textoDetalle += '<br> -Lo antes posible';
+     }
+     if(programarOpt.checked) {
+        textoDetalle += '<br> -Programado para: ';
+        textoDetalle += datetime;
+     }
 
+    textoDetalle += '<br> -Total: ';
+    textoDetalle += valorTotalCarro;
+    
+    if(efectivo.checked) {
+        textoDetalle += '<br> -Pago en efectivo: ';
+        textoDetalle += montoEfectivo;
+     }
+
+     if(tarjetaCredito.checked) {
+        textoDetalle += '<br> -Pago con tarjeta Visa';
+     }
+
+     detallePedido.innerHTML = textoDetalle;   
     
 })
 
@@ -53,13 +88,10 @@ function hayAlgo(valor) {
     return valor !== '';
 }
 
-/**funcion que muestra el pedido cuando se ingresan todos los datos */
-function mostrarPedido() {
-
-    $("#fondo").hide();
-    $("body").html('<div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div>')
-
-
-
-
+function confirmarPedido(){
+    let confirmacionPedido = document.getElementById("overContent2");
+    var textoHTML = "";
+    textoHTML = "<div class='row'><div class='col-7 h3'> Pedido Registrado Con Éxito </div> "
+    textoHTML += "<div class='col-3 h1'> <i id='logoChecked' class='fa fa-check-circle '></i> </div> </div>"
+    confirmacionPedido.innerHTML = textoHTML;
 }

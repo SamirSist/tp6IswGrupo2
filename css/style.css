@@ -11,11 +11,30 @@
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
   }
-
+  #overlay2 {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
 
 
 @media only screen and (max-width: 576px) {
   #overContent {
+    background-color: white;
+    position: absolute;
+    top:0%;
+    left: 0%;
+    margin: 0px;
+  }
+  #overContent2 {
     background-color: white;
     position: absolute;
     top:0%;
@@ -32,6 +51,13 @@
     left: 20%;
     margin: 10px;
   }
+  #overContent2 {
+    background-color: white;
+    position: absolute;
+    top:20%;
+    left: 30%;
+    margin: 10px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -42,64 +68,105 @@
     left: 25%;
     margin: 10px;
   }
+  #overContent2 {
+    background-color: white;
+    position: absolute;
+    top:20%;
+    left: 30%;
+    margin: 10px;
+  }
 }
 
 #fondo1 {
-  background-color: #E76F51;
-  text-align: center;
-  width: 100%;
+  background-color: #2A9D8F;
+  text-align: left;
 }
 
 #fondo2 {
   background-color: #F4A261;
   text-align: center;
-  width: 100%;
 }
 
 body {
-  background-color: #E9C46A;
+  background-color: #ffffff;
 }
 
 .btn {
   background-color: #2A9D8F;
-  color: black;
-  font-family: 'Open Sans', sans-serif, black;
+  color: #333;
+  font-family: Open_Sans, sans-serif;
   border: white;
+  font-weight: bold;
 }
-
+.btn-block{
+  background-color: #E9C46A;
+  color: #333;
+  font-family: Open_Sans, sans-serif;
+  border: white;
+  font-weight: bold;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
 h3 {
-  font-family: 'Open Sans', sans-serif, black;
+  font-family: Open_Sans, sans-serif;
+  color: #333;
   font-size: larger;
 }
 
 h6 {
-  font-family: 'Open Sans', sans-serif, black;
+  font-family: Open_Sans, sans-serif;
+  color:#333;
 }
 
 label {
   font-family: 'Roboto', sans-serif;
+  color: #333;
 }
 
 p {
   font-family: 'Roboto', sans-serif;
+  color: #333;
 }
 
 input {
   font-family: 'Roboto', sans-serif;
+  color: #333;
 }
 
 #borde {
-  border: 2px solid black;
+  border: 2px solid #b6d3df;
+  border-radius: 25px;
 }
 
 #overContent {
-  background-color: #E9C46A;
-  border: 2px solid black;
-
-  
+  background-color: #ffffff;
+  border: 2px solid #333;
+  border-radius: 25px;
 }
 
 #titulo-vuelto {
   margin-top:3% ;
   margin-left: 3%;
+}
+
+#logoi{
+  color:#264653;
+}
+
+#logoChecked{
+  color:#2A9D8F;
+}
+#detallePed{
+  border: 2px solid #b6d3df;
+  border-radius: 25px;
+}
+
+#piePagina {
+  background-color: #E76F51;
+  height: 50px;
+  text-align: center;
+}
+@font-face {
+  font-family: Open_Sans;
+  src: url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;0,800;1,800&display=swap);
 }

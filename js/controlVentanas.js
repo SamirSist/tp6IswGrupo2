@@ -22,6 +22,15 @@ function mostrarTarjeta() {
     
 }
 
+function mostrarResumen() {
+    $(".resumenPedido").removeClass("d-none");
+    $(".resumenPedido").addClass("d-block");
+}
+
+function ocultarResumen() {
+    $(".resumenPedido").addClass("d-none");
+    $(".resumenPedido").removeClass("d-block");
+}
 function ocultarTarjeta() {
     $(".datosTarjeta").addClass("d-none");
     $(".listadoTarjetas").addClass("d-none");
