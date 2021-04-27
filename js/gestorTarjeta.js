@@ -24,7 +24,7 @@ btnAgregar.addEventListener("click", () => {
     }
 
     else if (!payform.validateCardNumber(num.value)) {
-        alert('el numero de tarjeta ' +  num.value + ' no es un número valido');
+        alert('El numero de tarjeta ' +  num.value + ' no es un número valido');
         limpiarAviso()
     }
 
@@ -35,12 +35,12 @@ btnAgregar.addEventListener("click", () => {
     }
 
     else if(!payform.validateCardExpiry(fecha.value.substr(0,2), fecha.value.substr(3,6))) {
-        alert('su tarjeta esta vencida o tiene el formato MM/YYYY');
+        alert('Su tarjeta esta vencida o no tiene el formato MM/YYYY');
         limpiarAviso()
     }
 
     else if(!payform.validateCardCVC(cvc.value)){
-        alert('el cvc de la tarjeta no es valido');
+        alert('El cvc de la tarjeta no es valido');
         limpiarAviso()
     }
 
@@ -59,7 +59,12 @@ angular.module('myApp').controller("tarjetaControl",
         function($scope){
             $scope.nroTarjeta = 0
             $scope.agregarTarj = function(){
-                $scope.nroTarjeta = $scope.nroTarj.substring(12, 16);
+                if ($scope.nroTarj.length == 16){
+                    $scope.nroTarjeta = $scope.nroTarj.substring(12, 16);
+                }
+                else{
+                    $scope.nroTarjeta = $scope.nroTarj.substring(15, 19);
+                };
             };
         }
 );

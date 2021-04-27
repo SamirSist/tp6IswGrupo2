@@ -29,11 +29,14 @@ btnPedido.addEventListener("click", (e)=>{
         //preguntamos si hay algo en el campo
         if(!hayAlgo(dato.value)) {
             //si no hay algo  ,prguntamos si esta marcado el efectio ya que debe analizarlo en caso de estarlo
-            if(dato.id === "efectivo" && dato.checked) {
-                alert('Usted no ingreso ' + dato.id); 
+            if(dato.id === "montoEfectivo" && opEfectivo.checked) {
+                alert('Usted no ingresó ' + campo(dato.id)); 
                 return;
             }
-            alert('Usted no ingreso ' + campo(dato.id));
+            else{
+                continue;
+            }
+            alert('Usted no ingresó ' + campo(dato.id));
             return;
         }
         
@@ -101,8 +104,15 @@ function campo(id) {
     else if(id === "deptoNum") {
         return "nombre de departamento";
     }
+    else if(id === "referenciaDir") {
+        return "refencia";
+    }
+    else if(id === "montoEfectivo") {
+        return "monto a pagar";
+    }
+    
     else {
-        return "referencia";
+        return "un dato obligatorio";
     }
 }
 

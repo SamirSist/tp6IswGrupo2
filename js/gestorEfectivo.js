@@ -13,18 +13,18 @@ function validarEfectivo() {
     let total = parseFloat(totalPedido.innerText);
    
     if (isNaN(pago)) {
-        alert('ingrese un monto a pagar');
+        alert('Ingrese un monto a pagar');
         pagoEfectivo.value = "";
         vuelto.innerHTML = "";
     }
 
     else if(pago <= 0) {
-        alert('ingrese un monto mayor a cero');
+        alert('Ingrese un monto mayor a cero');
         vuelto.innerHTML = "";
     }
 
     else if (pago < total) {
-        alert('pago insuficiente');
+        alert('Pago insuficiente');
         pagoEfectivo.value = "";
         vuelto.innerHTML = "";
     }

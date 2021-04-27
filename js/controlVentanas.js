@@ -42,6 +42,7 @@ function ocultarTarjeta() {
 function agregarTarjeta(){
     $(".datosTarjeta").addClass("d-none");
     $(".datosTarjeta").removeClass("d-block");
+    $("#efectivo").removeAttr('checked');
 }
 
 $("#detalleBtn").click(function(){
