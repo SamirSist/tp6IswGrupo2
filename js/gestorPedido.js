@@ -59,7 +59,7 @@ btnPedido.addEventListener("click", (e)=>{
      let montoEfectivo= document.getElementById("montoEfectivo").value;
      let detallePedido = document.getElementById("detalleResPedido");
      textoDetalle += "Dirección: "
-     textoDetalle += ciudad;
+     textoDetalle += queCiudad(ciudad);
      textoDetalle += ' -' + nombreCalle;
      textoDetalle += ' -' + deptoNum;
      if(loAntesPosible.checked) {
@@ -113,6 +113,24 @@ function campo(id) {
     
     else {
         return "un dato obligatorio";
+    }
+}
+
+function queCiudad(num) {
+    if(num == 1){
+        return "Córdoba";
+    }
+
+    else if(num == 2) {
+        return "Rio Cuarto";
+    }
+
+    else if(num == 3) {
+        return "Villa María";
+    }
+    
+    else {
+        return "No es una ciudad válida.";
     }
 }
 
