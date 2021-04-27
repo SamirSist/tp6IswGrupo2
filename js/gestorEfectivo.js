@@ -28,6 +28,11 @@ function validarEfectivo() {
         pagoEfectivo.value = "";
         vuelto.innerHTML = "";
     }
+    else if (pago > 999999) {
+        alert('Su monto supera el máximo permitido');
+        pagoEfectivo.value = "";
+        vuelto.innerHTML = "";
+    }
 
     else {
         vuelto.innerHTML="Su vuelto es de $: " + (pago-total);

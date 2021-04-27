@@ -118,7 +118,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="nombreCalle">Calle y Número</label>
-                                        <input type="text" class="form-control campo" id="nombreCalle" placeholder="Entre Ríos 500">
+                                        <input type="text" class="form-control campo" id="nombreCalle" placeholder="Entre Ríos 500" ngModel maxlength="255">
                                     </div>
                                 </div>
                             </div>
@@ -126,13 +126,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="deptoNum">Depto</label>
-                                        <input type="text" class="form-control campo" id="deptoNum" placeholder="5A torre 2">
+                                        <input type="text" class="form-control campo" id="deptoNum" placeholder="5A torre 2"  ngModel maxlength="255">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="referenciaDir">Referencia</label>
-                                        <input type="text" class="form-control" id="referenciaDir" placeholder="Entre calles Belgrano y Chacabuco">
+                                        <input type="text" class="form-control" id="referenciaDir" placeholder="Entre calles Belgrano y Chacabuco"  ngModel maxlength="255">
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +246,7 @@
                                         <div class="col-12 col-md-12">
                                             <div class="form-group">
                                                 <label for="nombreTitular">Nombre y Apellido titular</label>
-                                                <input type="text" class="form-control" id="nombreTitular" placeholder="Juan Perez">
+                                                <input type="text" class="form-control" id="nombreTitular" placeholder="Juan Perez"  ngModel maxlength="255">
                                             </div>
                                         </div>
                                     </div>
@@ -254,13 +254,13 @@
                                         <div class="col-6 col-sm-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="vencimientoTarj">Vencimiento</label>
-                                                <input type="text" class="form-control" id="vencimientoTarj" placeholder="MM/AAAA">
+                                                <input type="text" class="form-control" id="vencimientoTarj" placeholder="MM/AAAA"  ngModel maxlength="7">
                                             </div>
                                         </div>
                                         <div class="col-5 col-sm-4 col-md-4">
                                             <div class="form-group">
                                                 <label for="cvc">CVC</label>
-                                                <input type="text" class="form-control" id="cvc" placeholder="">
+                                                <input type="text" class="form-control" id="cvc" placeholder=""  ngModel maxlength="4">
                                             </div>
                                         </div>
                                     </div>
