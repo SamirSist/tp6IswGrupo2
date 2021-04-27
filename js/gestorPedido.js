@@ -33,7 +33,7 @@ btnPedido.addEventListener("click", (e)=>{
                 alert('Usted no ingresó ' + campo(dato.id)); 
                 return;
             }
-            else{
+            else if(dato.id === "montoEfectivo"){
                 continue;
             }
             alert('Usted no ingresó ' + campo(dato.id));

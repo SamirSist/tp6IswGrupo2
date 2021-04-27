@@ -13,6 +13,8 @@ function ocultarReloj(){
 function mostrarEfectivo() {
     $(".efectivoForm").removeClass("d-none");
     $(".datosTarjeta").addClass("d-none");
+    $(".listadoTarjetas").addClass("d-none");
+    
 }
 function mostrarTarjeta() {
     $(".efectivoForm").addClass("d-none");
