@@ -34,7 +34,7 @@ btnPedido.addEventListener("click", (e)=>{
                 alert('Usted no ingreso ' + dato.id); 
                 return;
             }
-            alert('Usted no ingreso ' + dato.id);
+            alert('Usted no ingreso ' + campo(dato.id));
             return;
         }
         
@@ -51,6 +51,23 @@ btnPedido.addEventListener("click", (e)=>{
 /**funcion que valida si hay algo en los campos */
 function hayAlgo(valor) {
     return valor !== '';
+}
+
+function campo(id) {
+    if(id === "selectCiudad"){
+        return "cuidad";
+    }
+
+    else if(id === "nombreCalle") {
+        return "nombre de calle";
+    }
+
+    else if(id === "deptoNum") {
+        return "nombre de departamento";
+    }
+    else {
+        return "referencia";
+    }
 }
 
 /**funcion que muestra el pedido cuando se ingresan todos los datos */
