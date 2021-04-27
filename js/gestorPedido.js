@@ -33,7 +33,7 @@ btnPedido.addEventListener("click", (e)=>{
                 alert('Usted no ingreso ' + dato.id); 
                 return;
             }
-            alert('Usted no ingreso ' + dato.id);
+            alert('Usted no ingreso ' + campo(dato.id));
             return;
         }
         
@@ -50,7 +50,7 @@ btnPedido.addEventListener("click", (e)=>{
      let deptoNum = document.getElementById("deptoNum").value;
      let loAntesPosible = document.getElementById("loAntesPosible");
      let programarOpt = document.getElementById("programarOpt");
-     let datetime = document.getElementById("fechaHoraPicker").value;
+     let datetime = document.getElementById("fecha-envio").value;
      let efectivo = document.getElementById("efectivo");
      let tarjetaCredito = document.getElementById("tarjetaCredito");
      let montoEfectivo= document.getElementById("montoEfectivo").value;
@@ -88,10 +88,31 @@ function hayAlgo(valor) {
     return valor !== '';
 }
 
+
+function campo(id) {
+    if(id === "selectCiudad"){
+        return "cuidad";
+    }
+
+    else if(id === "nombreCalle") {
+        return "nombre de calle";
+    }
+
+    else if(id === "deptoNum") {
+        return "nombre de departamento";
+    }
+    else {
+        return "referencia";
+    }
+}
+
+
+
 function confirmarPedido(){
     let confirmacionPedido = document.getElementById("overContent2");
     var textoHTML = "";
     textoHTML = "<div class='row'><div class='col-7 h3'> Pedido Registrado Con Éxito </div> "
     textoHTML += "<div class='col-3 h1'> <i id='logoChecked' class='fa fa-check-circle '></i> </div> </div>"
     confirmacionPedido.innerHTML = textoHTML;
+
 }

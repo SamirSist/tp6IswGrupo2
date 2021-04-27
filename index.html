@@ -165,7 +165,10 @@
                                     <div class="timePicker form-group d-none">
                                         <label class="form-check-label" for="datetime">Seleccione un horario:</label>
                                        <div class='input-group date' id='datetime'>
-                                          <input type='text' class="form-control" id='fechaHoraPicker' />
+
+                                          <input onchange="validarFecha()" id="fecha-envio" type='text' class="form-control" />
+
+
                                           <span class="input-group-addon">
                                           <span class="glyphicon glyphicon-calendar"></span>
                                           </span>
