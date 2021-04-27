@@ -16,20 +16,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;0,800;1,800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="container-fluid p-0" id="fondo">
         <!---Logo-->
-        <div class="container-fluid m-0" id="fondo1">
+        <div class="container-fluid m-0 pl-5 pt-2 pb-1 shadow" id="fondo1">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="text">DeliveryEat!</h3>
+                    
+                    <h3 class="text"><i id="logoi" class="fa fa-cutlery"></i> DeliveryEat!</h3>
                 </div>
             </div>
         </div>
         <!---Título-->
-        <div class="container-fluid mb-3 ml-0 mr-0" id="fondo2">
+        <div class="container m-0 pl-5 pb-3 pt-3" >
             <div class="row">
                 <div class="col-12">
                     <h3>Registrar Pedido a Comercio</h3>
@@ -38,19 +40,19 @@
         </div>
 
         <!---Carrito y datos-->
-        <div class="container-fluid pl-5 pr-5 pt-0">
+        <div class="container-fluid pl-sm-5 pr-sm-5 pt-0">
             <div class="row">
-                <div class="col-md-4 col-sm-12 order-md-2 order-sm-1 mb-4 pl-4" >
-                    <div class="container" ng-controller="myCtrl">
+                <div class="col-md-4 col-sm-12 order-md-2 order-sm-1 mb-4 h-50 shadow-sm"  id="detallePed">
+                    <div class="container p-0" ng-controller="myCtrl">
                         <div class="row">
                             <button class ="btn btn-primary btn-block" onclick="mostrarDetalle()">Carrito por ${{total}}</button>
                         </div>
                         <div class="detallePedido d-none  d-md-inline mt-3">
-                            <div class="row mb-1">
+                            <div class="row mb-1 pl-4">
                                 <h6>Detalle Pedido:</h6>
                             </div>
 
-                            <div class="row mb-0 pl-1" ng-repeat="item in articulos">
+                            <div class="row mb-0 pl-1 pl-4" ng-repeat="item in articulos">
                                 <div class="col-7 p-0">
                                     <p>{{item[1]}} x{{item[2]}}</p>
                                 </div>
@@ -74,7 +76,7 @@
                                 </div>
                             </div>
                         -->
-                            <div class="row mb-0 pl-1">
+                            <div class="row mb-0 pl-4">
                                 <div class="col-7 p-0">
                                     <p>Costo envío</p>
                                 </div>
@@ -83,8 +85,8 @@
                                 </div>
                             </div>
 
-                            <hr class="mb-0 mt-0"/>
-                            <div class="row mt-1 pl-1">
+                            <hr class="mb-0 mt-0 pl-4"/>
+                            <div class="row mt-1 pl-4">
                                 <div class="col-7 p-0">
                                     <p>Total</p>
                                 </div>
@@ -95,10 +97,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8 col-sm-12 order-md-1 order-sm-2" ng-controller ="tarjetaControl">
+                <div class="col-md-8 col-sm-12 order-md-1 order-sm-2 mb-5" ng-controller ="tarjetaControl">
                     <form>
                         <!--Datos para Entrega-->
-                        <div class="container-fluid" id="borde">
+                        <div class="container-fluid p-3 shadow-sm" id="borde">
                             <h6>Datos para entrega:</h6>
                             <div class="row">
                                 <div class="col-md-6">
@@ -138,7 +140,7 @@
                         
 
                         <!--Tiempo de entrega>-->
-                        <div class="container-fluid mt-4" id="borde">
+                        <div class="container-fluid mt-4 p-3 shadow-sm" id="borde">
                             <h6>Tiempo de entrega:</h6>
                             <div class="row">
                                 <div class="col-6 col-sm-5 col-lg-4">
@@ -163,7 +165,10 @@
                                     <div class="timePicker form-group d-none">
                                         <label class="form-check-label" for="datetime">Seleccione un horario:</label>
                                        <div class='input-group date' id='datetime'>
+
                                           <input onchange="validarFecha()" id="fecha-envio" type='text' class="form-control" />
+
+
                                           <span class="input-group-addon">
                                           <span class="glyphicon glyphicon-calendar"></span>
                                           </span>
@@ -175,7 +180,7 @@
                         </div>
 
                         <!--Método de Pago-->
-                        <div class="container-fluid mt-4" id="borde">
+                        <div class="container-fluid mt-4 p-3 shadow-sm" id="borde">
                             <h6>Método de pago:</h6>
                             <div class="row">
                                 <div class="col-6 col-sm-3">
@@ -283,10 +288,50 @@
                         </div>
                     </form>
                 </div>
-            </div>  
+            </div>
+        </div>
+    
+    </div>
+
+    <!--Confirmación de Pedido-->
+    <div id="overlay2" class="resumenPedido container-fluid d-none">
+        <div class="row">
+            <div id="overContent2" class="p-5 col-12 col-sm-8 col-md-6 col-lg-5 rounded">
+                <div class="row">
+                    <div class="col" id="confirmacionPedido">
+                        <h6>Confirmación de Pedido</h6>
+                        <div class="col-12">
+                            <p>
+                                Resumen de pedido:
+                            </p>
+                            <div id="detalleResPedido">
+                                ResumenPlaceHolder
+                            </div>
+
+                        </div>
+                        <h5 id="cartel"></h5>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="col-4 col-sm-4 col-md-4 p-0">
+                        <button type="submit" class="btn btn-primary" onclick="ocultarResumen()">Cancelar</button>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4 p-0">
+                            <button id="boton-agregar" onClick="confirmarPedido()" class="btn btn-primary">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    
+    <!--Pié de Pagina-->
+    <div class="container-fluid" id="piePagina">
+        <div class="row">
+            <div class="col-12">
+                <h6>Copyright - ISW - 4K4 - Grupo 2</h6>
+            </div>
+        </div>
+    </div>
     <script src="js\bootstrap\jquery-3.5.1.slim.min.js"></script>
     <script src="js\bootstrap\bootstrap.min.js"></script>
     <script src="js/bootstrap/bootstrap-datetimepicker.min.js"></script>
